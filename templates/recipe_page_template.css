@@ -1,0 +1,197 @@
+@page {
+    size: 8.5in 11in;
+    margin: 0mm;
+    margin-bottom: 3em;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+body {
+    margin: 1px;
+    font-size: 1em;
+    /*font-family: "Century";*/
+}
+
+.header-wrapper {
+    display: flex;
+}
+
+.header-left-wrapper {
+    padding-left: 3em;
+    width: 70%;
+}
+
+.title-wrapper {
+    width: 100%;
+    padding-top: 2em;
+}
+
+.recipe-number {
+    font-size: 2.7em;
+    margin-right: .1em;
+    /*font-family: "Bodoni 72";*/
+
+}
+
+.title {
+    font-size: 2.5em;
+    /*font-family: "Apple Chancery";*/
+    margin: 0em;
+    width: min-content;
+    line-height: 1.5em;
+    padding-right: 1em;
+}
+
+.description {
+    width: 100%;
+    margin-top: 2em;
+}
+
+.main-image-wrapper {
+    padding: 10px;
+    padding-right: 2em;
+    padding-top: 3em;
+    width: 30%;
+    height: 15em;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.time-section-wrapper {
+    display: flex;
+    margin: 0px;
+    font-size: 1em;
+    justify-content: center;
+    height: 1em;
+    margin-top: -.3em;
+}
+
+.time-wrapper {
+    display: inline-flex;
+    align-items: center;   
+    vertical-align: top;
+    margin-top: 0em;
+}
+
+.time-wrapper-title {
+    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+.time {
+    margin-left: 4px;
+    margin-right: 8px;
+    margin-top: 0em;
+    font-size: 1em;
+}
+
+.content-wrapper {
+    display: flex;
+}
+
+.content-wrapper h2 {
+    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-weight: bold;
+    margin-top: .7em;
+}
+
+.ingredient-column-wrapper {
+    margin-left: 3em;
+    margin-right: 1em;
+    width: 30%;
+}
+
+.step-column-wrapper {
+    width: 70%;
+}
+
+.steps-wrapper {
+    border-style: solid;
+    border-width: 0px;
+    border-left-width: 7px;
+    border-left-color: salmon;
+    padding-left: 5px;
+    margin-right: 3em;
+    text-align: left;
+}
+
+.ingredient-title {
+   /*font-family: "Bodoni 72 Oldstyle";*/
+    font-weight: bold;
+    margin-top: .6em;
+    margin-bottom: .4em;
+}
+
+.ingredient-item {
+    text-indent : -1.3em ;
+    margin-left :  1.3em ;
+}
+
+.step-title {
+    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: .5em;
+    margin-left: .5em;
+}
+
+.step-text-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.step-number {
+    width: 25px;
+    text-align: right;
+    /*font-family: "Bodoni 72";*/
+    font-weight: bold;
+}
+
+.step-text {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.ingredient-step-wrapper {
+    vertical-align: top;
+}
+
+.notes-wrapper {
+    margin-top: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.notes-wrapper h2 {
+    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-weight: bold;
+}
+
+.note-title-wrapper {
+    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+
+.note-text-wrapper {
+}
+
+sup {
+    font-size: .6em;
+}
+
+sub {
+    font-size: .6em;
+}

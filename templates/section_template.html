@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h1 id="title">{{ title }}</h1>
+        <div class="toc-wrapper">
+            {% for recipe in manifest[category] %}
+                <div class="line-wrapper">
+                    <div class="recipe-name">{{ getRecipeName(recipe) }}</div>
+                    <div class="recipe-number">{{ getRecipeNumber(recipe) }}</div>
+                    <br>
+                </div>
+            {% endfor %}
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h1>{{ title }}</h1>
+        <div class="toc-wrapper">
+            <h2 class="categoryHeader">Reference</h2>
+            {% for staticPage in staticPageCatalog %}
+                <div class="line-wrapper">
+                    <div class="recipe-name">{{ staticPage }}</div>
+                    <div class="recipe-number">{{ staticPageCatalog[staticPage] }}</div>
+                    <br>
+                </div>
+            {% endfor %}
+            {% for category in categoryManifest %}
+                <h2 class="categoryHeader">{{ getCategoryName(category) }}</h2>
+                {% for recipe in categoryManifest[category] %}
+                    <div class="line-wrapper">
+                        <div class="recipe-name">{{ getRecipeName(recipe) }}</div>
+                        <div class="recipe-number">{{ getRecipeNumber(recipe) }}</div>
+                        <br>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        
+    </body>
+</html>

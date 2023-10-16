@@ -1,0 +1,13 @@
+*/*.pdf
+*.pdf
+output/*/*.html
+output
+.DS_Store
+.vscode
+recipeCache.json
+ingredientsForIndex.txt
+bran-muffin-api-response.json
+dedication.txt
+config.ini
+todo.md
+weasyprint.log

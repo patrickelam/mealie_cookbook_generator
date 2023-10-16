@@ -1,0 +1,89 @@
+@page {
+    size: 8.5in 11in;
+    margin: 0mm;
+    margin-bottom: 3em;
+    margin-top: 2em;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+body {
+    margin: 1px;
+    font-size: 1em;
+    padding-left: 2em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.title {
+    /*font-family: "Apple Chancery";*/
+    text-align: left;
+    font-size: 2.5em;
+}
+
+.wrapper {
+    width: 100%;
+    /*font-family: 'Century Schoolbook Regular';*/
+    font-size: .8em;
+}
+
+.page-number {
+    font-size: 2.7em;
+    margin-right: .1em;
+    /*font-family: "Bodoni 72";*/
+}
+
+.beef-wrapper {
+    width: 100%;
+}
+
+.pork-wrapper table{
+    width: 80%;
+}
+
+.seafood-wrapper table{
+    width: 80%;
+}
+
+
+.table-header {
+    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.cut {
+}
+
+.doneness {
+    /*font-family: 'Century Schoolbook Italic';*/
+    font-style: italic;
+    font-size: .7em;
+}
+
+.thickness {
+    /*font-family: 'Century Schoolbook Italic';*/
+    font-style: italic;
+    font-size: .8em;
+}
+
+.temp {
+
+}
+
+.time {
+    
+}
+
+.new-cut {
+    border-top-width: 1px;
+    border-top-color: black;
+    border-top-style: dashed;
+}

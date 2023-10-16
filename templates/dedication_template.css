@@ -1,0 +1,13 @@
+@page {
+    size: 8.5in 11in;
+    margin: 0mm;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.dedication {
+    text-align: center;
+    margin-top: 13em;
+    font-size: 1.3em;
+    /*font-family: "Apple Chancery";*/
+}

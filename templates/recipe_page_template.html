@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+
+        <div class="header-wrapper">
+            <div class="header-left-wrapper">
+                <div class="title-wrapper">
+                    <h1 class="title">
+                        <span class="recipe-number">{{ recipeNumber }}</span>{{ data.name }}
+                    </h1>
+                </div>
+                {% if data.description != "" %}
+                <div class="description">{{ data.description }}</div>
+                {% endif %}
+            </div>
+            <div class="main-image-wrapper">
+                <img src="{{ image }}">
+            </div>
+        </div>
+
+        <div class="time-section-wrapper">
+            {% if data.totalTime|string() != 'None'|string() and data.totalTime|string() != '' %}
+            <div class="time-wrapper">
+                <h3 class="time-wrapper-title">Total Time:</h3>
+                <span class="time">{{ data.totalTime }}</span>
+            </div>
+            {% endif %}
+            {% if data.prepTime|string() != 'None'|string() and data.prepTime|string() != '' %}
+            <div class="time-wrapper">
+                <h3 class="time-wrapper-title">Prep Time:</h3>
+                <span class="time">{{ data.prepTime }}</span>
+            </div>
+            {% endif %}
+            {% if data.performTime|string() != 'None'|string() and data.performTime|string() != '' %}
+            <div class="time-wrapper">
+                <h3 class="time-wrapper-title">Cook Time:</h3>
+                <span class="time">{{ data.performTime }}</span>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="content-wrapper">
+            <div class="ingredient-column-wrapper">
+                <h2>Ingredients</h2>
+                <div class="ingredients-wrapper">
+                    {% for ingredient in data.recipeIngredient %}
+                        {% if ingredient.title|string() != "None"|string() and ingredient.title|string() != '' %}
+                        <h4 class="ingredient-title">{{ ingredient.title }}</h4>
+                        {% endif %}
+                        <div class="ingredient-item">{{ convertDecimalToFractionString(ingredient.quantity) }} {{ pluralizeUnit(ingredient.quantity, ingredient.unit) }} {{ pluralizeIngredient(ingredient.quantity, ingredient.unit, ingredient.food.name) }}{{ getIngredientNoteAppend(ingredient) }}{{ ingredient.note }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="step-column-wrapper">
+                <h2>Steps</h2>
+                <div class="steps-wrapper">
+                    {% for step in data.recipeInstructions %}
+                        {% if step.title != "" %}
+                        <div class="step-title">{{ step.title }}</div>
+                        {% endif %}
+                        <div class="step-text-wrapper">
+                            <div class="step-number">{{ loop.index }}.</div>
+                            <div class="step-text"> {{ step.text }}</div>
+                        </div>
+                    {% endfor %}
+                    </div>
+            </div>
+
+        </div>
+        <div class="notes-wrapper">
+            {% if data.notes|length > 0 %}
+            <h2>Notes</h2>
+                {% for note in data.notes %}
+                <div class="note-title-wrapper">
+                    {{ note.title }}
+                </div>
+                <div class="note-text-wrapper">
+                    {{ note.text | replace("\n", "<br>")  }}
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </body>
+</html>

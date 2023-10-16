@@ -1,0 +1,37 @@
+@page {
+    size: 8.5in 11in;
+    margin: 0mm;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 2.5em;
+    /*font-family: "Bodoni 72 Oldstyle";*/
+}
+
+.line-wrapper {
+    display: flex;
+}
+
+.recipe-name {
+    float: left;
+    flex-grow: 1;
+    /*font-family: "Century";*/
+}
+
+.recipe-number {
+    float: right;
+    text-align: right;
+    flex-grow: 1000;
+    border-bottom: 1px dotted;
+    /*font-family: "Bodoni 72";*/
+}
+
+.toc-wrapper {
+    margin-top: 5em;
+    margin-left: 9em;
+    margin-right: 9em;
+}

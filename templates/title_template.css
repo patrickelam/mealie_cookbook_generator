@@ -1,0 +1,20 @@
+@page {
+    size: 8.5in 11in;
+    margin: 0mm;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 3em;
+    font-size: 4.5em;
+   /*font-family: "Bodoni 72 Oldstyle";*/
+}
+
+h2 {
+    text-align: center;
+    margin-top: -.5em;
+    font-size: 1.8em;
+   /*font-family: "Apple Chancery";*/
+}

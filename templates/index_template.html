@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h1>{{ title }}</h1>
+        <div class="list_wrapper">
+            {% set ns = namespace(lastLetter="") %}    
+            {% for item in sortedManifestKeys %}
+                {% if ns.lastLetter != item[0] %}
+                    {% set ns.lastLetter = item[0] %}
+                    <div class="title-letter">{{ ns.lastLetter|upper }}</div>
+                {% endif %}
+            <div class="item">
+                {% if indexCatalog[item] == "t" %}
+                <div class="tag-header">{{ item|title }}</div>
+                {% for recipeSlug in tagManifest[item] %}
+                <div class="line-wrapper-indented">
+                    <div class="recipe-name">{{ getRecipeName(recipeSlug) }}</div>
+                    <div class="recipe-number">{{ getRecipeNumber(recipeSlug) }}</div>
+                    <br>
+                </div>
+                {% endfor %}
+
+                {% elif indexCatalog[item] == "i" %}
+                <div class="ingredient-header">{{ item|title }}</div>
+                {% for recipeSlug in ingredientManifest[item] %}
+                <div class="line-wrapper-indented">
+                    <div class="recipe-name">{{ getRecipeName(recipeSlug) }}</div>
+                    <div class="recipe-number">{{ getRecipeNumber(recipeSlug) }}</div>
+                    <br>
+                </div>
+                {% endfor %}
+
+                {% else %}
+                <div class="line-wrapper">
+                    <div class="top-level-recipe-name">{{ getRecipeName(item) }}</div>
+                    <div class="recipe-number">{{ getRecipeNumber(item) }}</div>
+                    <br>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+        </div>
+        
+    </body>
+</html>
