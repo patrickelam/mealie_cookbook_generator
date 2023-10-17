@@ -1,7 +1,7 @@
-*/*.pdf
-*.pdf
+output/*/*.pdf
 output/*/*.html
 output
+recipe_book_preview.pdf
 .DS_Store
 .vscode
 recipeCache.json

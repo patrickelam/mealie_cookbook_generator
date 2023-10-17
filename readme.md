@@ -4,6 +4,8 @@ I started playing with [Mealie](https://github.com/mealie-recipes/mealie) a whil
 
 This is a *very* basic script to generate a pdf using data from the Mealie API and isn't supposed to be production level code by any means; however, I was happy with the generated output, so figured if someone else could get value from my work, I'd love to be able to share it. "Someday" I'll modularize it.
 
+An [example_output.pdf](./example_output.pdf) is included to demonstrate the scripts capabilities.
+
 # Structure
 
 The script pulls html and css from the `templates` directory, then injects data from the Mealie API to create recipe pages. These HTML pages are then rendered into individual PDF files. It also uses the API data to generate dynamic table of content pages, static reference pages, and an index section to help you find the recipe you're looking for quickly by listing all recipes by name, all recipes by common ingredients, and all recipes by tag. It finally combines all of the pages together to form the final book.
@@ -150,6 +152,12 @@ python3 ./cookbook_generator.py --ingredientDump
 ```
 python3 ./cookbook_generator.py -c breakfast side quick-bread soup dinner cookies ice-cream dessert sauce seasoning -i proofing-needed --removeTags aunt_barbs --static_pages
 ```
+
+The [example_output.pdf](./example_output.pdf) was generated using the following command:
+```
+python3 ./pdf_generator.py -c quick-bread --static_pages --removeTags <tags I don't want generated> -i <tags I don't want sections in the index>
+```
+Note, on the example index page, `Pumpkin` is a tag that I use to tie together all recipies with pumpkin. (I do the same with Chicken to tie together all the different `chicken thighs`, `chicken breast`, etc). Also note the generation of the Cinnamon category because two (the default minimum number) recipes contain cinnamon.
 
 # Customization
 
