@@ -22,7 +22,7 @@ As of this writing, this works against the 1.0.0beta-5 version of Mealie.
 
 ## Python
 
-This script is a python3 script. If you don't already use it, I recommend [pyenv](https://github.com/pyenv/pyenv) to manage python versions.
+This script is a python3 script and works with python 3.10.6. If you don't already use it, I recommend [pyenv](https://github.com/pyenv/pyenv) to manage python versions. Install the required packages with ```pip3 install -r requirements.txt```.
 
 ## Config File
 
