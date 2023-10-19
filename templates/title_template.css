@@ -5,10 +5,21 @@
     padding-right: .5em;
 }
 
+@font-face {
+    font-family: "MomsDiner";
+    src: url("../fonts/MomsDiner.ttf");
+}
+
+@font-face {
+    font-family: "Charm Regular";
+    src: url("../fonts/Charm-Regular.ttf");
+}
+
 h1 {
     text-align: center;
     margin-top: 3em;
     font-size: 4.5em;
+    font-family: "MomsDiner";
    /*font-family: "Bodoni 72 Oldstyle";*/
 }
 
@@ -16,5 +27,6 @@ h2 {
     text-align: center;
     margin-top: -.5em;
     font-size: 1.8em;
+    font-family: "Charm Regular";
    /*font-family: "Apple Chancery";*/
 }

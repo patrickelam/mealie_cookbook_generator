@@ -7,6 +7,26 @@
     padding-right: .5em;
 }
 
+@font-face {
+    font-family: "MomsDiner";
+    src: url("../fonts/MomsDiner.ttf");
+}
+
+@font-face {
+    font-family: "Charm Regular";
+    src: url("../fonts/Charm-Regular.ttf");
+}
+
+@font-face {
+    font-family: "texgyreschola-italic";
+    src: url("../fonts/texgyreschola-italic.otf");
+}
+
+@font-face {
+    font-family: "texgyreschola-regular";
+    src: url("../fonts/texgyreschola-regular.otf");
+}
+
 body {
     margin: 1px;
     font-size: 1em;
@@ -30,6 +50,7 @@ h2 {
 
 .wrapper {
     width: 100%;
+    font-family: "texgyreschola-regular";
     /*font-family: 'Century Schoolbook Regular';*/
     font-size: .8em;
 }
@@ -37,6 +58,7 @@ h2 {
 .page-number {
     font-size: 2.7em;
     margin-right: .1em;
+    font-family: "MomsDiner";
     /*font-family: "Bodoni 72";*/
 }
 
@@ -54,6 +76,7 @@ h2 {
 
 
 .table-header {
+    font-family: "MomsDiner";
     /*font-family: "Bodoni 72 Oldstyle";*/
     font-weight: bold;
     font-size: 1.2em;
@@ -63,12 +86,14 @@ h2 {
 }
 
 .doneness {
+    font-family: "texgyreschola-italic";
     /*font-family: 'Century Schoolbook Italic';*/
     font-style: italic;
     font-size: .7em;
 }
 
 .thickness {
+    font-family: "texgyreschola-italic";
     /*font-family: 'Century Schoolbook Italic';*/
     font-style: italic;
     font-size: .8em;

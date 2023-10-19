@@ -5,10 +5,16 @@
     padding-right: .5em;
 }
 
+@font-face {
+    font-family: "MomsDiner";
+    src: url("../fonts/MomsDiner.ttf");
+}
+
 h1 {
     text-align: center;
     margin-top: 2em;
     font-size: 2.5em;
+    font-family: "MomsDiner";
     /*font-family: "Bodoni 72 Oldstyle";*/
 }
 
@@ -27,6 +33,7 @@ h1 {
     text-align: right;
     flex-grow: 1000;
     border-bottom: 1px dotted;
+    font-family: "MomsDiner";
     /*font-family: "Bodoni 72";*/
 }
 

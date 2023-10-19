@@ -5,9 +5,15 @@
     padding-right: .5em;
 }
 
+@font-face {
+    font-family: "Charm Regular";
+    src: url("../fonts/Charm-Regular.ttf");
+}
+
 .dedication {
     text-align: center;
     margin-top: 13em;
     font-size: 1.3em;
+    font-family: "Charm Regular";
     /*font-family: "Apple Chancery";*/
 }
