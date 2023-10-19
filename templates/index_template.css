@@ -8,29 +8,32 @@
 }
 
 @font-face {
-    font-family: "MomsDiner";
-    src: url("../fonts/MomsDiner.ttf");
+    font-family: "Bodoni 72";
+    src: url("../fonts/Bodoni\ 72.ttc");
 }
 
 @font-face {
-    font-family: "Charm Regular";
-    src: url("../fonts/Charm-Regular.ttf");
+    font-family: "Bodoni 72 Oldstyle";
+    src: url("../fonts/Bodoni\ 72\ OS.ttc");
+}
+
+@font-face {
+    font-family: "Apple Chancery";
+    src: url("../fonts/Apple\ Chancery.ttf");
 }
 
 h1 {
     text-align: center;
     margin-bottom: 1em;
     font-size: 2.5em;
-    font-family: "Charm Regular";
-    /*font-family: "Apple Chancery";*/
+    font-family: "Apple Chancery";
 }
 
 .title-letter {
     font-size: 4em;
     margin-top: .4em;
     font-weight: bold;
-    font-family: "Charm Regular";
-    /*font-family: "Apple Chancery";*/
+    font-family: "Apple Chancery";
 }
 
 .line-wrapper {
@@ -46,8 +49,7 @@ h1 {
 .recipeName {
     float: left;
     flex-grow: 1;
-    font-family: "MomsDiner";
-    /*font-family: "Century";*/
+    font-family: "Century";
     padding-right: .2em;
 }
 
@@ -55,7 +57,6 @@ h1 {
     font-weight: bold;
     float: left;
     flex-grow: 1;
-    font-family: "MomsDiner";
 }
 
 .recipe-number {
@@ -63,8 +64,7 @@ h1 {
     text-align: right;
     flex-grow: 1000;
     border-bottom: 1px dotted;
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72";*/
+    font-family: "Bodoni 72";
 }
 
 .list_wrapper {
@@ -75,13 +75,10 @@ h1 {
 .ingredient-header {
     font-size: 1em;
     font-weight: bold;
-    font-family: "MomsDiner";
 }
 
 .tag-header {
     font-size: 1em;
     font-weight: bold;
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72 Oldstyle";*/
 }
 

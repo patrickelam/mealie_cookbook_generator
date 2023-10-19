@@ -6,16 +6,25 @@
 }
 
 @font-face {
-    font-family: "MomsDiner";
-    src: url("../fonts/MomsDiner.ttf");
+    font-family: "Bodoni 72";
+    src: url("../fonts/Bodoni\ 72.ttc");
+}
+
+@font-face {
+    font-family: "Bodoni 72 Oldstyle";
+    src: url("../fonts/Bodoni\ 72\ OS.ttc");
+}
+
+@font-face {
+    font-family: "Century Regular";
+    src: url("../fonts/Century\ Regular.ttf");
 }
 
 h1 {
     text-align: center;
     margin-top: 2em;
     font-size: 2.5em;
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-family: "Bodoni 72 Oldstyle";
 }
 
 .line-wrapper {
@@ -25,7 +34,7 @@ h1 {
 .recipe-name {
     float: left;
     flex-grow: 1;
-    /*font-family: "Century";*/
+    font-family: "Century Regular";
 }
 
 .recipe-number {
@@ -33,8 +42,7 @@ h1 {
     text-align: right;
     flex-grow: 1000;
     border-bottom: 1px dotted;
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72";*/
+    font-family: "Bodoni 72";
 }
 
 .toc-wrapper {

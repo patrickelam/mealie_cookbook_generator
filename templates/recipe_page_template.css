@@ -7,19 +7,29 @@
 }
 
 @font-face {
-    font-family: "MomsDiner";
-    src: url("../fonts/MomsDiner.ttf");
+    font-family: "Bodoni 72";
+    src: url("../fonts/Bodoni\ 72.ttc");
 }
 
 @font-face {
-    font-family: "Charm Regular";
-    src: url("../fonts/Charm-Regular.ttf");
+    font-family: "Bodoni 72 Oldstyle";
+    src: url("../fonts/Bodoni\ 72\ OS.ttc");
+}
+
+@font-face {
+    font-family: "Apple Chancery";
+    src: url("../fonts/Apple\ Chancery.ttf");
+}
+
+@font-face {
+    font-family: "Century Regular";
+    src: url("../fonts/Century\ Regular.ttf");
 }
 
 body {
     margin: 1px;
     font-size: 1em;
-    /*font-family: "Century";*/
+    font-family: "Century Regular";
 }
 
 .header-wrapper {
@@ -39,15 +49,13 @@ body {
 .recipe-number {
     font-size: 2.7em;
     margin-right: .1em;
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72";*/
+    font-family: "Bodoni 72";
 
 }
 
 .title {
     font-size: 2.5em;
-    font-family: "Charm Regular";
-    /*font-family: "Apple Chancery";*/
+    font-family: "Apple Chancery";
     margin: 0em;
     width: min-content;
     line-height: 1.5em;
@@ -94,8 +102,7 @@ img {
 }
 
 .time-wrapper-title {
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-family: "Bodoni 72 Oldstyle";
     font-weight: bold;
     font-size: 1em;
     margin-top: 0em;
@@ -114,8 +121,7 @@ img {
 }
 
 .content-wrapper h2 {
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-family: "Bodoni 72 Oldstyle";
     font-weight: bold;
     margin-top: .7em;
 }
@@ -141,8 +147,7 @@ img {
 }
 
 .ingredient-title {
-    font-family: "MomsDiner";
-   /*font-family: "Bodoni 72 Oldstyle";*/
+    font-family: "Bodoni 72 Oldstyle";
     font-weight: bold;
     margin-top: .6em;
     margin-bottom: .4em;
@@ -154,8 +159,7 @@ img {
 }
 
 .step-title {
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-family: "Bodoni 72 Oldstyle";
     font-weight: bold;
     margin-top: 1em;
     margin-bottom: .5em;
@@ -170,8 +174,7 @@ img {
 .step-number {
     width: 25px;
     text-align: right;
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72";*/
+    font-family: "Bodoni 72";
     font-weight: bold;
 }
 
@@ -191,14 +194,12 @@ img {
 }
 
 .notes-wrapper h2 {
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-family: "Bodoni 72 Oldstyle";
     font-weight: bold;
 }
 
 .note-title-wrapper {
-    font-family: "MomsDiner";
-    /*font-family: "Bodoni 72 Oldstyle";*/
+    font-family: "Bodoni 72 Oldstyle";
     font-weight: bold;
     margin-top: 1em;
     margin-bottom: .5em;

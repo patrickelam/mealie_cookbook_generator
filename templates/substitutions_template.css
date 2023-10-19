@@ -8,35 +8,44 @@
 }
 
 @font-face {
-    font-family: "MomsDiner";
-    src: url("../fonts/MomsDiner.ttf");
+    font-family: "Bodoni 72";
+    src: url("../fonts/Bodoni\ 72.ttc");
 }
 
 @font-face {
-    font-family: "Charm Regular";
-    src: url("../fonts/Charm-Regular.ttf");
+    font-family: "Bodoni 72 Oldstyle";
+    src: url("../fonts/Bodoni\ 72\ OS.ttc");
 }
 
 @font-face {
-    font-family: "texgyreschola-italic";
-    src: url("../fonts/texgyreschola-italic.otf");
+    font-family: "Apple Chancery";
+    src: url("../fonts/Apple\ Chancery.ttf");
 }
 
 @font-face {
-    font-family: "texgyreschola-regular";
-    src: url("../fonts/texgyreschola-regular.otf");
+    font-family: "Century Regular";
+    src: url("../fonts/Century\ Regular.ttf");
+}
+
+@font-face {
+    font-family: "Century Schoolbook Regular";
+    src: url("../fonts/Century\ Schoolbook\ Regular\ font.ttf");
+}
+
+@font-face {
+    font-family: "Century Schoolbook Italic";
+    src: url("../fonts/Century\ Schoolbook\ ITALIC.ttf");
 }
 
 body {
     margin: 1px;
     font-size: 1em;
-   /*font-family: "Century";*/
+    font-family: "Century Regular";
     padding-left: 2em;
 }
 
 .title {
-    font-family: "Charm Regular";
-   /*font-family: "Apple Chancery";*/
+    font-family: "Apple Chancery";
     text-align: left;
     font-size: 2.5em;
 }
@@ -44,13 +53,11 @@ body {
 .page-number {
     font-size: 2.7em;
     margin-right: .1em;
-    font-family: "MomsDiner";
-   /*font-family: "Bodoni 72";*/
+    font-family: "Bodoni 72";
 }
 
 .wrapper {
-    font-family: "texgyreschola-regular";
-   /*font-family: 'Century Schoolbook Regular';*/
+    font-family: 'Century Schoolbook Regular';
     font-size: .8em;
 }
 
@@ -64,8 +71,7 @@ td {
 }
 
 .measurement {
-    font-family: "texgyreschola-italic";
-   /*font-family: 'Century Schoolbook Italic';*/
+    font-family: 'Century Schoolbook Italic';
     font-style: italic;
     font-size: .5em;
 }
@@ -76,8 +82,7 @@ td {
 
 .substitution {
     vertical-align: top;
-    font-family: "texgyreschola-italic";
-   /*font-family: 'Century Schoolbook Italic';*/
+    font-family: 'Century Schoolbook Italic';
     font-style: italic;
     font-size: .8em;
 }

@@ -6,27 +6,25 @@
 }
 
 @font-face {
-    font-family: "MomsDiner";
-    src: url("../fonts/MomsDiner.ttf");
+    font-family: "Bodoni 72 Oldstyle";
+    src: url("../fonts/Bodoni\ 72\ OS.ttc");
 }
 
 @font-face {
-    font-family: "Charm Regular";
-    src: url("../fonts/Charm-Regular.ttf");
+    font-family: "Apple Chancery";
+    src: url("../fonts/Apple\ Chancery.ttf");
 }
 
 h1 {
     text-align: center;
     margin-top: 3em;
     font-size: 4.5em;
-    font-family: "MomsDiner";
-   /*font-family: "Bodoni 72 Oldstyle";*/
+   font-family: "Bodoni 72 Oldstyle";
 }
 
 h2 {
     text-align: center;
     margin-top: -.5em;
     font-size: 1.8em;
-    font-family: "Charm Regular";
-   /*font-family: "Apple Chancery";*/
+   font-family: "Apple Chancery";
 }
