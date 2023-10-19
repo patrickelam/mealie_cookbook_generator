@@ -2,6 +2,7 @@ import json
 import os
 import shutil
 from weasyprint import HTML, CSS
+from weasyprint.text.fonts import FontConfiguration
 from decimal import Decimal
 from PyPDF2 import PdfMerger
 from fractions import Fraction
@@ -144,7 +145,6 @@ def fetchAllRecipesWithData():
     listData = response.json()
     dictConvert = {}
     for recipe in listData.get("items"):
-        # TODO test
         if not shouldRemoveTaggedRecipe(recipe) and recipeHasDesiredCategories(recipe):
             fullRecipeData = fetchRecipeData(recipe.get("slug"))
             dictConvert[fullRecipeData["slug"]] = fullRecipeData
@@ -289,11 +289,12 @@ def saveHtml(htmlContent, outputHTMLFilename):
 
 # GENERATE PDF ===========================================================================
 def convertHtmlToPdf(htmlFileName, stylesFilename, outputPDFFilename):
+    font_config = FontConfiguration()
     htmlFile = open(htmlFileName, "r")
     html = HTML(string=htmlFile.read(),base_url='base_url')
     htmlFile.close()
-    css = CSS(stylesFilename)
-    html.write_pdf(outputPDFFilename, stylesheets=[css])
+    css = CSS(stylesFilename, font_config=font_config)
+    html.write_pdf(outputPDFFilename, stylesheets=[css], font_config=font_config)
     return
 
 def generateSectionHeaderPDF(category):
@@ -608,7 +609,6 @@ if __name__ == "__main__":
     DEDICATION = get_config_value('cookbook', 'dedication')
     MIN_RECIPES = int(get_config_value('index_page', 'min_recipes'))
     MAX_RECIPES = int(get_config_value('index_page', 'max_recipes'))
-    FOOD_FILE_PATH = get_config_value('index_page', 'food_file')
     MEALIE_URL = get_config_value('mealie_instance', 'url')
     API_TOKEN = get_config_value('mealie_instance', 'api_token')
 
@@ -625,9 +625,9 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--indexIgnoreTags", nargs="+")
     parser.add_argument("--removeTags", nargs="+")
     parser.add_argument("-f", "--foods", nargs="+")
+    parser.add_argument("--foodFile", nargs='?', const=True, default=False, type=bool)
     parser.add_argument("-r", "--recipe")
     parser.add_argument("--ingredientDump", nargs='?', const=True, default=False, type=bool)
-    parser.add_argument("--foodFile")
     parser.add_argument("--static_pages", action='store_true')
     parser.add_argument("--just_static_pages", action='store_true')
     parser.add_argument("--find_step_issues", action='store_true')
@@ -717,7 +717,7 @@ if __name__ == "__main__":
             generateUnitConversionsPDF(globalStaticCatalog['Unit Conversions'])
             generateSousVidePDF(globalStaticCatalog['Sous Vide Times'])
 
-        if DEDICATION != None:
+        if DEDICATION != None and DEDICATION != "":
             generateDedicationPDF(DEDICATION)
 
         generateToCPDF()
@@ -730,8 +730,10 @@ if __name__ == "__main__":
         
         if args.foods:
             globalIngredientManifest = buildIngredientManifest(args.foods)
+        elif args.foodFile:
+            globalIngredientManifest = buildIngredientManifest(readFoodsFromFile("ingredientsForIndex.txt"))
         else:
-            globalIngredientManifest = buildIngredientManifest(readFoodsFromFile(FOOD_FILE_PATH))
+            globalIngredientManifest = buildIngredientManifest([])
 
         print("Building Index")
         globalIndexCatalog = buildIndexCatalog()

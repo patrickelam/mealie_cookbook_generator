@@ -2,3 +2,4 @@ weasyprint
 PyPDF2
 jinja2
 requests
+gobject
