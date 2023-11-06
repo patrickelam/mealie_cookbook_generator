@@ -12,6 +12,3 @@ RUN apk --update --upgrade --no-cache add fontconfig ttf-freefont font-noto term
 
 RUN pip install --no-cache-dir --upgrade pip \
   && pip install --no-cache-dir -r requirements.txt
-
-
-# don't copy, reference directories ?
