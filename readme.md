@@ -30,6 +30,8 @@ As of this writing, this works against the 1.0.0beta-5 version of Mealie.
 
 This script is a python3 script and works with python 3.10.6. If you don't already use it, I recommend [pyenv](https://github.com/pyenv/pyenv) to manage python versions. Install the required packages with ```pip3 install -r requirements.txt```.
 
+If you don't want to deal with setting up an environment, but have Docker installed, use the [instructions below](./readme.md#docker-alternative) to run the commands using Docker.
+
 
 ## Configuration File
 
