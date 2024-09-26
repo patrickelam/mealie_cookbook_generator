@@ -430,9 +430,9 @@ def combinePDFs():
 
 # FILE MANAGEMENT ========================================================================
 def prepareOutputDir():
-    shutil.rmtree("output")
-    if not os.path.exists("output"):
-        os.mkdir("output")
+    if os.path.exists("output"):
+        shutil.rmtree("output")
+    os.mkdir("output")
     return
 
 
