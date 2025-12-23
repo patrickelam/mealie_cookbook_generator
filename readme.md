@@ -148,6 +148,24 @@ apple
 *If neither `--foods` nor `--foodFile` are given, the index page will not have entries for ingredients.*
 
 
+#### Recipe
+
+The `--recipe` or `-r` flag allows you to generate a single recipe page by providing the recipe slug.
+
+```
+-r chicken-salad
+```
+
+
+#### Recipe Number
+
+The `--recipeNumber` flag overrides the default recipe number used when generating a single recipe page with `--recipe`.
+
+```
+-r chicken-salad --recipeNumber 33
+```
+
+
 #### Ingredient Dump
 
 The `--ingredientDump` flag will create a text file named `ingredientsForIndex.txt` with every single ingredient in the recipe list. You then can manually curate the contents to curate the index page sections.

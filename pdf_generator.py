@@ -391,9 +391,9 @@ def getRecipeAndConvertToPDF(recipeSlug, categorySlug, recipeNumber):
     convertHtmlToPdf(outputHTMLFilename, stylesFilename, outputPDFFilename)
     return
 
-def generateSingleRecipePage(recipeSlug):
+def generateSingleRecipePage(recipeSlug, recipeNumber=123):
     recipeData = fetchRecipeData(recipeSlug)
-    renderedHTML = recipeTemplate.render(data=recipeData,image=recipeData.get("imageUrl"),recipeNumber=123)
+    renderedHTML = recipeTemplate.render(data=recipeData,image=recipeData.get("imageUrl"),recipeNumber=recipeNumber)
     outputPDFFilename = "output//{}.pdf".format(recipeSlug)
     outputHTMLFilename = "output//{}.html".format(recipeSlug)
     stylesFilename = "templates//recipe_page_template.css"
@@ -627,6 +627,7 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--foods", nargs="+")
     parser.add_argument("--foodFile", nargs='?', const=True, default=False, type=bool)
     parser.add_argument("-r", "--recipe")
+    parser.add_argument("--recipeNumber", type=int)
     parser.add_argument("--ingredientDump", nargs='?', const=True, default=False, type=bool)
     parser.add_argument("--static_pages", action='store_true')
     parser.add_argument("--just_static_pages", action='store_true')
@@ -674,7 +675,10 @@ if __name__ == "__main__":
     prepareOutputDir()
 
     if args.recipe:
-        generateSingleRecipePage(args.recipe)
+        if args.recipeNumber is not None:
+            generateSingleRecipePage(args.recipe, args.recipeNumber)
+        else:
+            generateSingleRecipePage(args.recipe)
     elif args.ingredientDump:
         print("Building caches...")
         globalRecipeCache = fetchAllRecipesWithData()
