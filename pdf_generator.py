@@ -13,6 +13,8 @@ import math
 import re
 import configparser
 
+# SETUP ================================================================================
+font_config = FontConfiguration()
 
 # DISPLAY ================================================================================
 def convertDecimalToFractionString(decString):
@@ -85,6 +87,7 @@ def pluralizeIngredient(quantity, unit, ingredientName):
 
 # ORGANIZATIONAL DATA ====================================================================
 def generateCategoryCache():
+    print("generateCategoryCache()")
     cache = {}
     for recipe in globalRecipeCache.get("items"):
         for category in globalRecipeCache.get("items")[recipe].get("recipeCategory"):
@@ -92,6 +95,7 @@ def generateCategoryCache():
     return cache
 
 def generateTagCache():
+    print("generateTagCache()")
     cache = {}
     for recipe in globalRecipeCache.get("items"):
         for tag in globalRecipeCache.get("items")[recipe].get("tags"):
@@ -120,12 +124,14 @@ def setRecipeNumber(recipeSlug, number):
     return
 
 def dumpGlobalRecipeData():
+    print("dumpGlobalRecipeData()")
     recipeCacheFile = open("recipeCache.json", "w")
     recipeCacheFile.write(json.dumps(globalRecipeCache))
     recipeCacheFile.close()
     return
 
 def dumpRecipeData(slug, data):
+    print("dumpRecipeData()")
     file = open(slug+".json","w")
     file.write(json.dumps(data))
     file.close()
@@ -140,6 +146,7 @@ def fetchRecipeData(recipeSlug):
     return fullRecipeData
 
 def fetchAllRecipesWithData():
+    print("fetchAllRecipesWithData()")
     url = "{}/api/recipes?perPage=-1&loadFood=false".format(MEALIE_URL)
     response = requests.get(url, headers=authHeader)
     listData = response.json()
@@ -289,7 +296,6 @@ def saveHtml(htmlContent, outputHTMLFilename):
 
 # GENERATE PDF ===========================================================================
 def convertHtmlToPdf(htmlFileName, stylesFilename, outputPDFFilename):
-    font_config = FontConfiguration()
     htmlFile = open(htmlFileName, "r")
     html = HTML(string=htmlFile.read(),base_url='base_url')
     htmlFile.close()
@@ -309,6 +315,7 @@ def generateSectionHeaderPDF(category):
     return
 
 def generateTitlePDF():
+    print("generateTitlePDF()")
     renderedHTML = renderTitleHTML()
     outputPDFFilename = "output//title.pdf"
     outputHTMLFilename = "output//title.html"
@@ -318,6 +325,7 @@ def generateTitlePDF():
     return
 
 def generateSpiceUsesPDF(pageNumber):
+    print("generateSpiceUsesPDF()")
     renderedHTML = renderSpiceUsesHTML(pageNumber)
     outputPDFFilename = "output//spice_uses.pdf"
     outputHTMLFilename = "output//spice_uses.html"
@@ -327,6 +335,7 @@ def generateSpiceUsesPDF(pageNumber):
     return
 
 def generateSubstitutionsPDF(pageNumber):
+    print("generateSubstitutionsPDF()")
     renderedHTML = renderSubstitutionsHTML(pageNumber)
     outputPDFFilename = "output//substitutions.pdf"
     outputHTMLFilename = "output//substitutions.html"
@@ -336,6 +345,7 @@ def generateSubstitutionsPDF(pageNumber):
     return
     
 def generateUnitConversionsPDF(pageNumber):
+    print("generateUnitConversionsPDF()")
     renderedHTML = renderUnitConversionsHTML(pageNumber)
     outputPDFFilename = "output//unit_conversions.pdf"
     outputHTMLFilename = "output//unit_conversions.html"
@@ -345,6 +355,7 @@ def generateUnitConversionsPDF(pageNumber):
     return
 
 def generateSousVidePDF(pageNumber):
+    print("generateSousVidePDF()")
     renderedHTML = renderSousVideHTML(pageNumber)
     outputPDFFilename = "output//sous_vide.pdf"
     outputHTMLFilename = "output//sous_vide.html"
@@ -354,6 +365,7 @@ def generateSousVidePDF(pageNumber):
     return
 
 def generateDedicationPDF(dedicationText):
+    print("generateDedicationPDF()")
     renderedHTML = renderDedicationHTML(dedicationText)
     outputPDFFilename = "output//dedication.pdf"
     outputHTMLFilename = "output//dedication.html"
@@ -363,6 +375,7 @@ def generateDedicationPDF(dedicationText):
     return
 
 def generateToCPDF():
+    print("generateToCPDF()")
     renderedHTML = renderToCHTML()
     outputPDFFilename = "output//toc.pdf"
     outputHTMLFilename = "output//toc.html"
@@ -372,6 +385,7 @@ def generateToCPDF():
     return
 
 def generateIndexPDF():
+    print("generateIndexPDF()")
     renderedHTML = renderIndexHTML()
     outputPDFFilename = "output//index.pdf"
     outputHTMLFilename = "output//index.html"
@@ -381,6 +395,7 @@ def generateIndexPDF():
     return
 
 def getRecipeAndConvertToPDF(recipeSlug, categorySlug, recipeNumber):
+    print("getRecipeAndConvertToPDF()")
     renderedHTML = getRecipeAndRenderHTML(recipeSlug, recipeNumber)
     if not os.path.exists("output/{}".format(categorySlug)):
         os.mkdir("output/{}".format(categorySlug))
@@ -392,6 +407,7 @@ def getRecipeAndConvertToPDF(recipeSlug, categorySlug, recipeNumber):
     return
 
 def generateSingleRecipePage(recipeSlug, recipeNumber=123):
+    print("generateSingleRecipePage()")
     recipeData = fetchRecipeData(recipeSlug)
     renderedHTML = recipeTemplate.render(data=recipeData,image=recipeData.get("imageUrl"),recipeNumber=recipeNumber)
     outputPDFFilename = "output//{}.pdf".format(recipeSlug)
@@ -404,6 +420,7 @@ def generateSingleRecipePage(recipeSlug, recipeNumber=123):
 
 # COMBINING PDFs =========================================================================
 def combinePDFs():
+    print("combinePDFs()")
     #merger = PdfFileMerger()
     merger = PdfMerger()
     merger.append("output//title.pdf")
@@ -430,6 +447,7 @@ def combinePDFs():
 
 # FILE MANAGEMENT ========================================================================
 def prepareOutputDir():
+    print("prepareOutputDir()")
     if os.path.exists("output"):
         shutil.rmtree("output")
     os.mkdir("output")
@@ -438,6 +456,7 @@ def prepareOutputDir():
 
 # MANIFEST MANAGEMENT ====================================================================
 def buildCategoryManifest(categories):
+    print("buildCategoryManifest()")
     # Build list from categories
     recipeNumber = 1
     manifest = {}
@@ -460,6 +479,7 @@ def recipeInCategoryManifest(recipeName):
     return False
 
 def buildIngredientManifest(foodList):
+    print("buildIngredientManifest()")
     manifest = {}
     for ingredient in foodList:
         recipeSlugs = sorted(getRecipeSlugsWithIngredient(ingredient))
@@ -473,6 +493,7 @@ def buildIngredientManifest(foodList):
     return manifest
 
 def buildTagManifest():
+    print("buildTagManifest()")
     manifest = {}
     for tag in globalTagCache:
         if not args.tag or args.tag != tag:
@@ -485,6 +506,7 @@ def buildTagManifest():
     return manifest
 
 def buildIndexCatalog():
+    print("buildIndexCatalog()")
     catalog = {}
     for categorySlug in globalCategoryManifest:
         for recipeSlug in globalCategoryManifest[categorySlug]:
@@ -542,26 +564,26 @@ def readDedicationFromFile(filePath):
 def findAndPrintOvenTempsInSteps():
     # °F
     print("\nChecking for Oven Temps...\n")
-    regex = "(\d *(f|F)[^°F|\w])|(\d\.)|((f|F)ahrenheit)|((C|c)elsius)|((d|D)egree)"
+    regex = r"(\d *(f|F)[^°F|\w])|(\d\.)|((f|F)ahrenheit)|((C|c)elsius)|((d|D)egree)"
     findAndPrintStringsInSteps(regex)
     return
 
 def findAndPrintMeasurementsInSteps():
     print("\nChecking for Measurements...\n")
-    regex = "(( |\d)(c|C)( |\W)|( |\d)(t|T)( |\W)|( |\d)(t|T)sp |( |\d)(t|T)bsp |( |\d)(m|M)in( |\.)|( |\d)(h|H)r( |\.)|(( |\d)(c|C)( |\W)|( |\d)(t|T)( |\W)|( |\d)(t|T)sp |( |\d)(t|T)bsp |( |\d)(m|M)in |(m|M)( |\W))(m|M)( |\W))|( \d *(in|In)( |\.))"
+    regex = r"(( |\d)(c|C)( |\W)|( |\d)(t|T)( |\W)|( |\d)(t|T)sp |( |\d)(t|T)bsp |( |\d)(m|M)in( |\.)|( |\d)(h|H)r( |\.)|(( |\d)(c|C)( |\W)|( |\d)(t|T)( |\W)|( |\d)(t|T)sp |( |\d)(t|T)bsp |( |\d)(m|M)in |(m|M)( |\W))(m|M)( |\W))|( \d *(in|In)( |\.))"
     findAndPrintStringsInSteps(regex)
     return
 
 def findAndPrintFractionsInSteps():
     # <sup>1</sup>&frasl;<sub>2</sub>
     print("\nChecking for fractions...\n")
-    regex = "(\d *\/ *\d)"
+    regex = r"(\d *\/ *\d)"
     findAndPrintStringsInSteps(regex)
     return
 
 def findAndPrintLinesNotEndingWithPeriod():
     print("\nChecking for lines not ending in period...\n")
-    regex = "[^(\.|\!)]\Z"
+    regex = r"[^(\.|\!)]\Z"
     findAndPrintStringsInSteps(regex)
     return
 
@@ -680,18 +702,18 @@ if __name__ == "__main__":
         else:
             generateSingleRecipePage(args.recipe)
     elif args.ingredientDump:
-        print("Building caches...")
+        print("Ingredient Dump...")
         globalRecipeCache = fetchAllRecipesWithData()
         dumpIngredientList()
     elif args.find_step_issues:
-        print("Building caches...")
+        print("Finding step issues...")
         globalRecipeCache = fetchAllRecipesWithData()
         findAndPrintOvenTempsInSteps()
         findAndPrintMeasurementsInSteps()
         findAndPrintLinesNotEndingWithPeriod()
         findAndPrintFractionsInSteps()
     elif args.find_title_issues:
-        print("Building caches...")
+        print("Finding title issues...")
         globalRecipeCache = fetchAllRecipesWithData()
         findAndPrintPosessiveTitles()
     elif args.just_static_pages:

@@ -11,3 +11,5 @@ dedication.txt
 config.ini
 todo.md
 weasyprint.log
+__pycache__/
+*.pyc
